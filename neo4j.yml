@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: neo4j.kclproject.site
+  labels:
+    app: kcl-project
+spec:
+  containers:
+  - name: kcl-project
+    image: neo4j
+    ports:
+    - name: blot
+      containerPort: 7687
+    - name: neo4j
+      containerPort: 7474
