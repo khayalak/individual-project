@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: neo4j-kclproject-site
+spec:
+  ports:
+  - port: 80
+    targetPort: neo4j
+    protocol: TCP
+  selector:
+    app: kcl-project
+  type: LoadBalancer
