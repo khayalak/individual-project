@@ -7,6 +7,9 @@ spec:
   - port: 80
     targetPort: neo4j
     protocol: TCP
+  - port: 80
+    targetPort: blot
+    protocol: TCP
   selector:
     app: kcl-project
   type: LoadBalancer
