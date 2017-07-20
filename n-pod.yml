@@ -9,7 +9,7 @@ spec:
   - name: kcl-project
     image: neo4j
     ports:
-    - name: blot
-      containerPort: 7687
-    - name: neo4j
-      containerPort: 7474
+    - containerPort: 7687
+      name: blot
+    - containerPort: 7474
+      name: neo4j
