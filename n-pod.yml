@@ -13,3 +13,11 @@ spec:
       name: browser
     - containerPort: 7687
       name: bolt
+    - containerPort: 5000
+      name: discovery
+    - containerPort: 6000
+      name: tx
+    - containerPort: 7000
+      name: raft
+    securityContext:
+      privileged: true
