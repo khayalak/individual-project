@@ -9,7 +9,7 @@ spec:
     targetPort: browser
     protocol: TCP
   - name: https
-    port: 443
+    port: 80
     targetPort: blot
     protocol: TCP
   selector:
