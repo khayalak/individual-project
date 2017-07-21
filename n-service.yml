@@ -7,7 +7,11 @@ spec:
   - name: https
     port: 7474
     targetPort: browser
-    protocol: TCP
+    protocol: HTTP
+  - name: bolt
+    port: 7687
+    targetPort: bolt
+    protocol: Bolt
   selector:
     app: kcl-project
   type: LoadBalancer
