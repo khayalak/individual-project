@@ -4,13 +4,9 @@ metadata:
   name: neo4j
 spec:
   ports:
-  - name: http
-    port: 80
-    targetPort: browser
-    protocol: TCP
   - name: https
-    port: 80
-    targetPort: blot
+    port: 7474
+    targetPort: browser
     protocol: TCP
   selector:
     app: kcl-project
