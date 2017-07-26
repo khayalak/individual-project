@@ -18,9 +18,9 @@ spec:
         - name: bolt-port
           containerPort: 7687
         volumeMounts:
-        - mountPath: /myvol
+        - mountPath: /data
           name: myvolume
       volumes:
       - name: myvolume
         awsElasticBlockStore:
-          volumeID: # insert AWS EBS volumeID here
+          volumeID: vol-04f4e4225f5c52903
