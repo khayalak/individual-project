@@ -1,0 +1,68 @@
+kubectl describe pod neo4j-deployment-3764788143-dspd7
+Name:		neo4j-deployment-3764788143-dspd7
+Namespace:	default
+Node:		ip-172-20-38-36.ec2.internal/172.20.38.36
+Start Time:	Wed, 26 Jul 2017 00:27:29 +0000
+Labels:		app=neo4j-app
+		pod-template-hash=3764788143
+Annotations:	kubernetes.io/created-by={"kind":"SerializedReference","apiVersion":"v1","reference":{"kind":"ReplicaSet","namespace":"default","name":"neo4j-deployment-3764788143","uid":"e6d4f321-7195-11e7-8560-121c...
+		kubernetes.io/limit-ranger=LimitRanger plugin set: cpu request for container noe4j-demo
+Status:		Running
+IP:		100.96.1.58
+Created By:	ReplicaSet/neo4j-deployment-3764788143
+Controlled By:	ReplicaSet/neo4j-deployment-3764788143
+Containers:
+  noe4j-demo:
+    Container ID:	docker://205c71ce465626f02d2662736ea85f7e1954ec57428e02a70cb4fae693b00cb4
+    Image:		neo4j
+    Image ID:		docker-pullable://neo4j@sha256:322089c514c9c13ba4323997140c56789bf3451715ad1853b3f7555cc19a1451
+    Ports:		7474/TCP, 7687/TCP
+    State:		Waiting
+      Reason:		CrashLoopBackOff
+    Last State:		Terminated
+      Reason:		Completed
+      Exit Code:	0
+      Started:		Mon, 01 Jan 0001 00:00:00 +0000
+      Finished:		Wed, 26 Jul 2017 01:54:20 +0000
+    Ready:		False
+    Restart Count:	13
+    Requests:
+      cpu:		100m
+    Environment:	<none>
+    Mounts:
+      /data from myvolume (rw)
+      /var/run/secrets/kubernetes.io/serviceaccount from default-token-47st6 (ro)
+Conditions:
+  Type		Status
+  Initialized 	True 
+  Ready 	False 
+  PodScheduled 	True 
+Volumes:
+  myvolume:
+    Type:	AWSElasticBlockStore (a Persistent Disk resource in AWS)
+    VolumeID:	vol-04f4e4225f5c52903
+    FSType:	
+    Partition:	0
+    ReadOnly:	false
+  default-token-47st6:
+    Type:	Secret (a volume populated by a Secret)
+    SecretName:	default-token-47st6
+    Optional:	false
+QoS Class:	Burstable
+Node-Selectors:	<none>
+Tolerations:	node.alpha.kubernetes.io/notReady:NoExecute for 300s
+		node.alpha.kubernetes.io/unreachable:NoExecute for 300s
+Events:
+  FirstSeen	LastSeen	Count	From					SubObjectPath			Type		Reason		Message
+  ---------	--------	-----	----					-------------			--------	------		-------
+  52m		52m		1	kubelet, ip-172-20-38-36.ec2.internal	spec.containers{noe4j-demo}	Normal		Started		Started container with id 841df885f3ba6c416987a5bceaeb5e44fd741af5edfde60fbcc9de410220cb68
+  52m		52m		1	kubelet, ip-172-20-38-36.ec2.internal	spec.containers{noe4j-demo}	Normal		Created		Created container with id 841df885f3ba6c416987a5bceaeb5e44fd741af5edfde60fbcc9de410220cb68
+  45m		45m		1	kubelet, ip-172-20-38-36.ec2.internal	spec.containers{noe4j-demo}	Normal		Created		Created container with id 37cf6723318932223374ad51b558993c8f8d9baab29c605077ed77bca825d859
+  45m		45m		1	kubelet, ip-172-20-38-36.ec2.internal	spec.containers{noe4j-demo}	Normal		Started		Started container with id 37cf6723318932223374ad51b558993c8f8d9baab29c605077ed77bca825d859
+  1h		7m		14	kubelet, ip-172-20-38-36.ec2.internal	spec.containers{noe4j-demo}	Normal		Pulling		pulling image "neo4j"
+  38m		7m		5	kubelet, ip-172-20-38-36.ec2.internal	spec.containers{noe4j-demo}	Normal		Created		(events with common reason combined)
+  38m		7m		5	kubelet, ip-172-20-38-36.ec2.internal	spec.containers{noe4j-demo}	Normal		Started		(events with common reason combined)
+  1h		7m		14	kubelet, ip-172-20-38-36.ec2.internal	spec.containers{noe4j-demo}	Normal		Pulled		Successfully pulled image "neo4j"
+  1h		4m		14	kubelet, ip-172-20-38-36.ec2.internal					Normal		SandboxChanged	Pod sandbox changed, it will be killed and re-created.
+  1h		13s		211	kubelet, ip-172-20-38-36.ec2.internal	spec.containers{noe4j-demo}	Warning		BackOff		Back-off restarting failed container
+  57m		13s		186	kubelet, ip-172-20-38-36.ec2.internal					Warning		FailedSync	Error syncing pod, skipping: failed to "StartContainer" for "noe4j-demo" with CrashLoopBackOff: "Back-off 5m0s restarting failed container=noe4j-demo pod=neo4j-deployment-3764788143-dspd7_default(351459a8-7199-11e7-8560-121cc7c62674)"
