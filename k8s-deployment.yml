@@ -10,7 +10,7 @@ spec:
         app: neo4j-app
     spec:
       containers:
-      - name: noe4j-demo
+      - name: neo4j-demo
         image: neo4j
         ports:
         - name: neo4j-port
@@ -19,8 +19,8 @@ spec:
           containerPort: 7687
         volumeMounts:
         - mountPath: /data
-          name: myvolume
+          name: neo4j-volume
       volumes:
-      - name: myvolume
+      - name: neo4j-volume
         awsElasticBlockStore:
-          volumeID: vol-04f4e4225f5c52903
+          volumeID: vol-0d7ee335f0bce7f31
