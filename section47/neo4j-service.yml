@@ -4,11 +4,11 @@ metadata:
   name: neo4j-app
 spec:
   ports:
-  - port: 31001
+  - port: 7474
     name: browser
     targetPort: neo4j-port
     protocol: TCP
-  - port: 31002
+  - port: 7687
     name: blot
     targetPort: bolt-port
     protocol: TCP
