@@ -1,0 +1,77 @@
+ubuntu@ubuntu-xenial:~/neo4j_k8s/section47$ kubectl describe pod neo4j-deployment-313400342-6l3qb 
+Name:		neo4j-deployment-313400342-6l3qb
+Namespace:	default
+Node:		ip-172-20-57-186.ec2.internal/172.20.57.186
+Start Time:	Fri, 28 Jul 2017 17:54:27 +0000
+Labels:		app=neo4j-app
+		pod-template-hash=313400342
+Annotations:	kubernetes.io/created-by={"kind":"SerializedReference","apiVersion":"v1","reference":{"kind":"ReplicaSet","namespace":"default","name":"neo4j-deployment-313400342","uid":"ccb292bb-73bd-11e7-8112-127da...
+		kubernetes.io/limit-ranger=LimitRanger plugin set: cpu request for container neo4j-app
+Status:		Running
+IP:		100.96.2.3
+Created By:	ReplicaSet/neo4j-deployment-313400342
+Controlled By:	ReplicaSet/neo4j-deployment-313400342
+Containers:
+  neo4j-app:
+    Container ID:	docker://5325ea0a811ce3628db2ef91d62ff771d2c880b53acabe08d9f57d1697cc0447
+    Image:		neo4j
+    Image ID:		docker-pullable://neo4j@sha256:322089c514c9c13ba4323997140c56789bf3451715ad1853b3f7555cc19a1451
+    Ports:		7474/TCP, 7687/TCP
+    State:		Waiting
+      Reason:		CrashLoopBackOff
+    Last State:		Terminated
+      Reason:		Error
+      Exit Code:	1
+      Started:		Mon, 01 Jan 0001 00:00:00 +0000
+      Finished:		Fri, 28 Jul 2017 17:56:39 +0000
+    Ready:		False
+    Restart Count:	4
+    Requests:
+      cpu:		100m
+    Environment:	<none>
+    Mounts:
+      /data from data (rw)
+      /var/run/secrets/kubernetes.io/serviceaccount from default-token-gcvx1 (ro)
+Conditions:
+  Type		Status
+  Initialized 	True 
+  Ready 	False 
+  PodScheduled 	True 
+Volumes:
+  data:
+    Type:	NFS (an NFS mount that lasts the lifetime of a pod)
+    Server:	us-east-1a.fs-e22fbeab.efs.us-east-1.amazonaws.com
+    Path:	/
+    ReadOnly:	false
+  default-token-gcvx1:
+    Type:	Secret (a volume populated by a Secret)
+    SecretName:	default-token-gcvx1
+    Optional:	false
+QoS Class:	Burstable
+Node-Selectors:	<none>
+Tolerations:	node.alpha.kubernetes.io/notReady:NoExecute for 300s
+		node.alpha.kubernetes.io/unreachable:NoExecute for 300s
+Events:
+  FirstSeen	LastSeen	Count	From					SubObjectPath			Type		Reason		Message
+  ---------	--------	-----	----					-------------			--------	------		-------
+  2m		2m		1	default-scheduler							Normal		Scheduled	Successfully assigned neo4j-deployment-313400342-6l3qb to ip-172-20-57-186.ec2.internal
+  2m		2m		1	kubelet, ip-172-20-57-186.ec2.internal	spec.containers{neo4j-app}	Normal		Created		Created container with id 6a81509f92399929be54720f2370347be10b40e76456ff4ecaeef65da84cbd5b
+  2m		2m		1	kubelet, ip-172-20-57-186.ec2.internal	spec.containers{neo4j-app}	Normal		Started		Started container with id 6a81509f92399929be54720f2370347be10b40e76456ff4ecaeef65da84cbd5b
+  2m		2m		1	kubelet, ip-172-20-57-186.ec2.internal	spec.containers{neo4j-app}	Normal		Started		Started container with id 9de68dea3a99152e7bb72c626cfab3052f1a10e5f9370163e441f91abad42106
+  2m		2m		1	kubelet, ip-172-20-57-186.ec2.internal	spec.containers{neo4j-app}	Normal		Created		Created container with id 9de68dea3a99152e7bb72c626cfab3052f1a10e5f9370163e441f91abad42106
+  2m		2m		1	kubelet, ip-172-20-57-186.ec2.internal					Warning		FailedSync	Error syncing pod, skipping: failed to "StartContainer" for "neo4j-app" with CrashLoopBackOff: "Back-off 10s restarting failed container=neo4j-app pod=neo4j-deployment-313400342-6l3qb_default(ccb61538-73bd-11e7-8112-127da5ac701c)"
+
+  1m	1m	1	kubelet, ip-172-20-57-186.ec2.internal	spec.containers{neo4j-app}	Normal	Started		Started container with id 46616e752bb0e6721674bdeaaf66373c3877db2fad98940848217fb5214e2f5e
+  1m	1m	1	kubelet, ip-172-20-57-186.ec2.internal	spec.containers{neo4j-app}	Normal	Created		Created container with id 46616e752bb0e6721674bdeaaf66373c3877db2fad98940848217fb5214e2f5e
+  1m	1m	2	kubelet, ip-172-20-57-186.ec2.internal					Warning	FailedSync	Error syncing pod, skipping: failed to "StartContainer" for "neo4j-app" with CrashLoopBackOff: "Back-off 20s restarting failed container=neo4j-app pod=neo4j-deployment-313400342-6l3qb_default(ccb61538-73bd-11e7-8112-127da5ac701c)"
+
+  1m	1m	1	kubelet, ip-172-20-57-186.ec2.internal	spec.containers{neo4j-app}	Normal	Created		Created container with id 19722a1667771d30a2c1abafbc01162e37771da641dbb465b0b2c570248a064e
+  1m	1m	1	kubelet, ip-172-20-57-186.ec2.internal	spec.containers{neo4j-app}	Normal	Started		Started container with id 19722a1667771d30a2c1abafbc01162e37771da641dbb465b0b2c570248a064e
+  1m	34s	3	kubelet, ip-172-20-57-186.ec2.internal					Warning	FailedSync	Error syncing pod, skipping: failed to "StartContainer" for "neo4j-app" with CrashLoopBackOff: "Back-off 40s restarting failed container=neo4j-app pod=neo4j-deployment-313400342-6l3qb_default(ccb61538-73bd-11e7-8112-127da5ac701c)"
+
+  2m	21s	5	kubelet, ip-172-20-57-186.ec2.internal	spec.containers{neo4j-app}	Normal	Pulled		Successfully pulled image "neo4j"
+  2m	21s	5	kubelet, ip-172-20-57-186.ec2.internal	spec.containers{neo4j-app}	Normal	Pulling		pulling image "neo4j"
+  21s	21s	1	kubelet, ip-172-20-57-186.ec2.internal	spec.containers{neo4j-app}	Normal	Created		Created container with id 5325ea0a811ce3628db2ef91d62ff771d2c880b53acabe08d9f57d1697cc0447
+  21s	21s	1	kubelet, ip-172-20-57-186.ec2.internal	spec.containers{neo4j-app}	Normal	Started		Started container with id 5325ea0a811ce3628db2ef91d62ff771d2c880b53acabe08d9f57d1697cc0447
+  2m	1s	8	kubelet, ip-172-20-57-186.ec2.internal	spec.containers{neo4j-app}	Warning	BackOff		Back-off restarting failed container
+  14s	1s	2	kubelet, ip-172-20-57-186.ec2.internal					Warning	FailedSync	Error syncing pod, skipping: failed to "StartContainer" for "neo4j-app" with CrashLoopBackOff: "Back-off 1m20s restarting failed container=neo4j-app pod=neo4j-deployment-313400342-6l3qb_default(ccb61538-73bd-11e7-8112-127da5ac701c)"
