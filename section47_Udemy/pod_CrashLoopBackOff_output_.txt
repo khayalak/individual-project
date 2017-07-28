@@ -1,0 +1,72 @@
+Name:		neo4j-db-lkmv8
+Namespace:	default
+Node:		ip-172-20-48-4.ec2.internal/172.20.48.4
+Start Time:	Fri, 28 Jul 2017 16:14:24 +0000
+Labels:		app=neo4j-db
+Annotations:	kubernetes.io/created-by={"kind":"SerializedReference","apiVersion":"v1","reference":{"kind":"ReplicationController","namespace":"default","name":"neo4j-db","uid":"d255dd09-73af-11e7-94f9-12ec7c3b0cea...
+		kubernetes.io/limit-ranger=LimitRanger plugin set: cpu request for container neo4j-db
+Status:		Running
+IP:		100.96.2.2
+Created By:	ReplicationController/neo4j-db
+Controlled By:	ReplicationController/neo4j-db
+Containers:
+  neo4j-db:
+    Container ID:	docker://295a24991831d349a3a7de242faf3a6181f1e7e5472f6d2c095e4f6617b3a073
+    Image:		neo4j
+    Image ID:		docker-pullable://neo4j@sha256:322089c514c9c13ba4323997140c56789bf3451715ad1853b3f7555cc19a1451
+    Ports:		7474/TCP, 7687/TCP
+    Args:
+      --ignore-db-dir=lost+found
+    State:		Waiting
+      Reason:		CrashLoopBackOff
+    Last State:		Terminated
+      Reason:		Error
+      Exit Code:	2
+      Started:		Mon, 01 Jan 0001 00:00:00 +0000
+      Finished:		Fri, 28 Jul 2017 16:15:37 +0000
+    Ready:		False
+    Restart Count:	3
+    Requests:
+      cpu:		100m
+    Environment:	<none>
+    Mounts:
+      /data from neo4j-storage (rw)
+      /var/run/secrets/kubernetes.io/serviceaccount from default-token-d1vdw (ro)
+Conditions:
+  Type		Status
+  Initialized 	True 
+  Ready 	False 
+  PodScheduled 	True 
+Volumes:
+  neo4j-storage:
+    Type:	PersistentVolumeClaim (a reference to a PersistentVolumeClaim in the same namespace)
+    ClaimName:	db-storage
+    ReadOnly:	false
+  default-token-d1vdw:
+    Type:	Secret (a volume populated by a Secret)
+    SecretName:	default-token-d1vdw
+    Optional:	false
+QoS Class:	Burstable
+Node-Selectors:	<none>
+Tolerations:	node.alpha.kubernetes.io/notReady:NoExecute for 300s
+		node.alpha.kubernetes.io/unreachable:NoExecute for 300s
+Events:
+  FirstSeen	LastSeen	Count	From					SubObjectPath			Type		Reason		Message
+  ---------	--------	-----	----					-------------			--------	------		-------
+  1m		1m		1	default-scheduler							Normal		Scheduled	Successfully assigned neo4j-db-lkmv8 to ip-172-20-48-4.ec2.internal
+  1m		1m		1	kubelet, ip-172-20-48-4.ec2.internal	spec.containers{neo4j-db}	Normal		Created		Created container with id 95303809184cb22f7cca085663c3111c26239aa1bee5c13e3020d7405ea0557d
+  1m		1m		1	kubelet, ip-172-20-48-4.ec2.internal	spec.containers{neo4j-db}	Normal		Started		Started container with id 95303809184cb22f7cca085663c3111c26239aa1bee5c13e3020d7405ea0557d
+  1m		1m		1	kubelet, ip-172-20-48-4.ec2.internal	spec.containers{neo4j-db}	Normal		Started		Started container with id d87a9b9cab0cb73eaeef76e72152f25f174f58ea742ced14cdc6aab2dbd5ee1d
+  1m		1m		1	kubelet, ip-172-20-48-4.ec2.internal	spec.containers{neo4j-db}	Normal		Created		Created container with id d87a9b9cab0cb73eaeef76e72152f25f174f58ea742ced14cdc6aab2dbd5ee1d
+  1m		1m		2	kubelet, ip-172-20-48-4.ec2.internal					Warning		FailedSync	Error syncing pod, skipping: failed to "StartContainer" for "neo4j-db" with CrashLoopBackOff: "Back-off 10s restarting failed container=neo4j-db pod=neo4j-db-lkmv8_default(d256a610-73af-11e7-94f9-12ec7c3b0cea)"
+
+  50s	50s	1	kubelet, ip-172-20-48-4.ec2.internal	spec.containers{neo4j-db}	Normal	Created		Created container with id 550e09c5147a270c810445cc960a4a2c1822b8e9c83fcc587ce5a5bb8954ce0b
+  50s	50s	1	kubelet, ip-172-20-48-4.ec2.internal	spec.containers{neo4j-db}	Normal	Started		Started container with id 550e09c5147a270c810445cc960a4a2c1822b8e9c83fcc587ce5a5bb8954ce0b
+  48s	32s	3	kubelet, ip-172-20-48-4.ec2.internal					Warning	FailedSync	Error syncing pod, skipping: failed to "StartContainer" for "neo4j-db" with CrashLoopBackOff: "Back-off 20s restarting failed container=neo4j-db pod=neo4j-db-lkmv8_default(d256a610-73af-11e7-94f9-12ec7c3b0cea)"
+
+  20s	20s	1	kubelet, ip-172-20-48-4.ec2.internal	spec.containers{neo4j-db}	Normal	Started		Started container with id 295a24991831d349a3a7de242faf3a6181f1e7e5472f6d2c095e4f6617b3a073
+  1m	20s	4	kubelet, ip-172-20-48-4.ec2.internal	spec.containers{neo4j-db}	Normal	Pulled		Successfully pulled image "neo4j"
+  1m	20s	4	kubelet, ip-172-20-48-4.ec2.internal	spec.containers{neo4j-db}	Normal	Pulling		pulling image "neo4j"
+  20s	20s	1	kubelet, ip-172-20-48-4.ec2.internal	spec.containers{neo4j-db}	Normal	Created		Created container with id 295a24991831d349a3a7de242faf3a6181f1e7e5472f6d2c095e4f6617b3a073
+  1m	7s	7	kubelet, ip-172-20-48-4.ec2.internal	spec.containers{neo4j-db}	Warning	BackOff		Back-off restarting failed container
+  19s	7s	2	kubelet, ip-172-20-48-4.ec2.internal					Warning	FailedSync	Error syncing pod, skipping: failed to "StartContainer" for "neo4j-db" with CrashLoopBackOff: "Back-off 40s restarting failed container=neo4j-db pod=neo4j-db-lkmv8_default(d256a610-73af-11e7-94f9-12ec7c3b0cea)"

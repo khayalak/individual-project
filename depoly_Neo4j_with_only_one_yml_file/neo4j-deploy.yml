@@ -1,27 +1,20 @@
-apiVersion: extensions/v1beta1
+wapiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: neo4j-deployment
 spec:
-  replicas: 2
+  replicas: 1
   template:
     metadata:
       labels:
         app: neo4j-app
     spec:
       containers:
-      - name: neo4j-app
+      - name: noe4j-demo
         image: neo4j
         ports:
         - name: neo4j-port
           containerPort: 7474
         - name: bolt-port
           containerPort: 7687
-        volumeMounts:
-        - mountPath: /data
-          name: data
-      volumes:
-      - name: data
-        nfs:
-          server: us-east-1a.fs-7520b13c.efs.us-east-1.amazonaws.com
-          path: /
+
