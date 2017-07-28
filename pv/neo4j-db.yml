@@ -23,7 +23,7 @@ spec:
         - name: bolt-port
           containerPort: 7687
         volumeMounts:
-        - mountPath: “/data”
+        - mountPath: /data
           name: neo4j-storage
       volumes:
         - name: neo4j-storage
