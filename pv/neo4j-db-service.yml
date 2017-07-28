@@ -4,9 +4,11 @@ metadata:
   name: neo4j-db
 spec:
   ports:
-  - port: 7474
+  - name: browser
+    port: 7474
     protocol: TCP
-  - port: 7687
+  - name: blot
+    port: 7687
     protocol: TCP
   selector:
     app: neo4j-db
