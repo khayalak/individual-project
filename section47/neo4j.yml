@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: neo4j-deployment
 spec:
-  replicas: 1
+  replicas: 3
   template:
     metadata:
       labels:
@@ -17,13 +17,11 @@ spec:
           containerPort: 7474
         - name: bolt-port
           containerPort: 7687
-        - name: ssh-port
-          containerPort: 7473
         volumeMounts:
         - mountPath: /data
           name: data
       volumes:
       - name: data
         nfs:
-          server: us-east-1a.fs-778d1d3e.efs.us-east-1.amazonaws.com
+          server: us-east-1a.fs-07b2224e.efs.us-east-1.amazonaws.com
           path: /
