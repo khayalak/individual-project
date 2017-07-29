@@ -1,9 +1,9 @@
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  name: db-storage
+  name: neo4j-storage
   annotations:
-    volume.beta.kubernetes.io/storage-class: "standard"
+    volume.beta.kubernetes.io/storage-class: "standard_1"
 spec:
   accessModes:
     - ReadWriteOnce
