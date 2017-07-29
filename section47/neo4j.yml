@@ -23,5 +23,5 @@ spec:
       volumes:
       - name: data
         nfs:
-          server: us-east-1a.fs-07b2224e.efs.us-east-1.amazonaws.com
+          server: us-east-1a.fs-08b82841.efs.us-east-1.amazonaws.com
           path: /
