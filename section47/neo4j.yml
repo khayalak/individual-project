@@ -17,11 +17,13 @@ spec:
           containerPort: 7474
         - name: bolt-port
           containerPort: 7687
+        - name: ssh-port
+          containerPort: 7473
         volumeMounts:
         - mountPath: /data
           name: data
       volumes:
       - name: data
         nfs:
-          server: us-east-1a.fs-efda4aa6.efs.us-east-1.amazonaws.com
+          server: us-east-1a.fs-a38b1bea.efs.us-east-1.amazonaws.com
           path: /
