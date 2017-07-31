@@ -1,4 +1,4 @@
-wapiVersion: extensions/v1beta1
+apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: neo4j-deployment
@@ -10,11 +10,17 @@ spec:
         app: neo4j-app
     spec:
       containers:
-      - name: noe4j-demo
+      - name: neo4j-demo
         image: neo4j
         ports:
         - name: neo4j-port
           containerPort: 7474
         - name: bolt-port
           containerPort: 7687
-
+        volumeMounts:
+        - mountPath: /data
+          name: neo4j-volume
+      volumes:
+      - name: neo4j-volume
+        awsElasticBlockStore:
+          volumeID: vol-0a5a5a9b4c6cc5f4f

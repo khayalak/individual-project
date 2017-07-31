@@ -12,6 +12,9 @@ spec:
       containers:
       - name: neo4j-demo
         image: neo4j
+        env:
+          - name: NEO4J_dbms_read__only
+            value: “true”
         ports:
         - name: neo4j-port
           containerPort: 7474
@@ -23,4 +26,4 @@ spec:
       volumes:
       - name: neo4j-volume
         awsElasticBlockStore:
-          volumeID: vol-0d7ee335f0bce7f31
+          volumeID: vol-0a5a5a9b4c6cc5f4f
