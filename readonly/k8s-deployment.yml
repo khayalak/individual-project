@@ -26,4 +26,4 @@ spec:
       volumes:
       - name: neo4j-volume
         awsElasticBlockStore:
-          volumeID: vol-0a5a5a9b4c6cc5f4f
+          volumeID: vol-0f8e3133f775caea6
