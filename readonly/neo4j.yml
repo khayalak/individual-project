@@ -14,7 +14,7 @@ spec:
         image: neo4j
         env:
           - name: NEO4J_dbms_read__only
-            value: true
+            value: “true”
         ports:
         - name: neo4j-port
           containerPort: 7474
