@@ -1,14 +1,13 @@
 kind: PersistentVolume
 apiVersion: v1
 metadata:
-   name: local-volume
+   name: myvolume
    labels:
       type: local
 spec:
-  storageClassName: manual
   capacity:
     storage: 10Gi
   accessModes:
-    - ReadWriteMany
+    - ReadWriteOnce
   hostPath:
     path: "/data"
