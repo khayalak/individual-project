@@ -12,6 +12,9 @@ spec:
       containers:
       - name: neo4j-demo
         image: neo4j
+        env:
+          - name: NEO4J_dbms_read__only
+            value: “true”
         ports:
         - name: neo4j-port
           containerPort: 7474
